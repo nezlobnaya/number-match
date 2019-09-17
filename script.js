@@ -81,6 +81,9 @@ const images = [
     },
   ]
 
+  const timeDelay = 3000
+  document.getElementById('timeSetting').innerHTML = timeDelay /1000
+
 generateImage = (randomNumber) => {
     const imageFileName = images[randomNumber].image_name 
     const image = document.querySelector('img')
@@ -90,7 +93,24 @@ generateImage = (randomNumber) => {
 }
 
 loop = () => {
+    if(images.length === 0) {
+        stopTimer()
+        return
+    }
     const randomNumber = Math.floor(Math.random() * images.length)
     generateImage(randomNumber)
 }
-loop()
+
+const timer = () => {
+setInterval(loop, timeDelay)
+}
+
+play = () => {
+   loop()
+   timer() 
+}
+
+stopTimer = () => {
+    clearInterval(timer)
+}
+

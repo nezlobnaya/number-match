@@ -81,7 +81,7 @@ const images = [
     },
   ]
 
-  const timeDelay = 3000
+  const timeDelay = 4000
   let currentImageValue = 0, displayNumber = 0, score = 0, chosen = false
 
   document.getElementById('timeSetting').innerHTML = timeDelay /1000
@@ -97,10 +97,11 @@ generateImage = (randomNumber) => {
     const imageName = imageFileName.slice(0, imageFileName.length - 4)
     document.getElementById('item-name').innerHTML = imageName
 
+    //Lines 101-117 code to create random numbers for images
     const numberOfItems = images[randomNumber].number_of_items //correct number of items
 
     const number0to1 = Math.floor(Math.random() * 2)
-    const plusOrMinus = number0to1 === 0? -1 : +1
+    const plusOrMinus = number0to1 === 0? -1 : +1 //
 
     const split = Math.floor(Math.random() *2)
     if(split === 0) {
@@ -114,6 +115,7 @@ generateImage = (randomNumber) => {
     }
 
     currentImageValue = numberOfItems
+
     images.splice(randomNumber, 1)
 }
 

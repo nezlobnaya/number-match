@@ -89,6 +89,20 @@ generateImage = (randomNumber) => {
     const image = document.querySelector('img')
     image.src = `images/${imageFileName}`
 
+    const numberOfItems = images[randomNumber].number_of_items
+
+    const number0to1 = Math.floor(Math.random() * 2)
+    const plusOrMinus = number0to1 === 0? -1 : +1
+
+    const split = Math.floor(Math.random() *2)
+    if(split === 0) {
+        //add real number to screen
+        document.getElementById('number').innerHTML = numberOfItems
+    } else {
+        //false number
+        document.getElementById('number').innerHTML = `${numberOfItems + plusOrMinus}`
+    }
+
     images.splice(randomNumber, 1)
 }
 

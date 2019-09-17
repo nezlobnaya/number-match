@@ -82,6 +82,8 @@ const images = [
   ]
 
   const timeDelay = 3000
+  let currentImageValue = 0, displayNumber = 0, score = 0, chosen = false
+
   document.getElementById('timeSetting').innerHTML = timeDelay /1000
 
 generateImage = (randomNumber) => {
@@ -98,11 +100,14 @@ generateImage = (randomNumber) => {
     if(split === 0) {
         //add real number to screen
         document.getElementById('number').innerHTML = numberOfItems
+        displayNumber = numberOfItems
     } else {
         //false number
         document.getElementById('number').innerHTML = `${numberOfItems + plusOrMinus}`
+        displayNumber = `${numberOfItems + plusOrMinus}`
     }
 
+    currentImageValue = numberOfItems
     images.splice(randomNumber, 1)
 }
 
@@ -111,6 +116,7 @@ loop = () => {
         stopTimer()
         return
     }
+    chosen =false
     const randomNumber = Math.floor(Math.random() * images.length)
     generateImage(randomNumber)
 }
@@ -128,3 +134,18 @@ stopTimer = () => {
     clearInterval(timer)
 }
 
+match = () => {
+    if(!chosen) {
+        currentImageValue === displayNumber ? score++ : score --
+        document.getElementById('currentScore').innerHTML = score
+        chosen = true
+    }
+}
+
+noMatch = () => {
+    if(!chosen) {
+        currentImageValue !== displayNumber ? score++ : score --
+        document.getElementById('currentScore').innerHTML = score
+        chosen = true
+    }
+}

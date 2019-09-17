@@ -12,26 +12,27 @@
         <h3>Welcome to the <em>Number Match</em> Game...</h3>
         <em>The rules are simple.</em>
         <p>A random image and number will be generated</p>
-        <p>If the number ron the screen matches the number of items on the random picture, hit the thumbs up!
+        <p>If the number on the screen matches the number of items on the random picture, hit the thumbs up!
          </p> 
         <p>If they are different, hit thumbs down! </p>
         <p>You have <span id='timeSetting'>4</span> seconds to decide!</p>
     </div>
 
-    <button id='play-button'>
+    <button id='play-button' onclick='play()'>
         <strong>Play!</strong>
     </button>
-    <h3 id='message'>Game over, your score was 15/20</h3>
+    <h3 id='message'></h3>
 
     <div id='game-area'>
-        <h3 id='score'>Score: <span id='currentScore'>4</span> / <span id='totalAvailable'>20</span></h3>
+        <h3 id='score'>Score: <span id='currentScore'></span> / <span id='totalAvailable'></span></h3>
         <img>
-        <p>How many <span id='item-name'>macaroons</span>?</p>
+        <p>How many <span id='item-name'></span>?</p>
         <div class='match-buttons'>
-                <button>&#x1F44D</button>
+                <button onClick='match()'>&#x1F44D</button>
                 <p id='number'>6</p>
-                <button>&#x1F44E</button>
+                <button onClick='noMatch()'>&#x1F44E</button>
         </div>
     </div>
+    <script src='script.js'></script>
 </body>
 </html>

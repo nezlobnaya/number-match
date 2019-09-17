@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Number Match Game</title>
+    <link rel='stylesheet' href='styles.css'>
 </head>
 <body>
     <div id='welcome'>
@@ -26,9 +27,11 @@
         <h3 id='score'>Score: <span id='currentScore'>4</span> / <span id='totalAvailable'>20</span></h3>
         <img>
         <p>How many <span id='item-name'>macaroons</span>?</p>
-        <button>&#x1F44D</button>
-        <p id='number'>6</p>
-        <button>&#x1F44E</button>
+        <div class='match-buttons'>
+                <button>&#x1F44D</button>
+                <p id='number'>6</p>
+                <button>&#x1F44E</button>
+        </div>
     </div>
 </body>
 </html>

@@ -97,11 +97,7 @@ generateImage = (randomNumber) => {
     const imageName = imageFileName.slice(0, imageFileName.length - 4)
     document.getElementById('item-name').innerHTML = imageName
 
-<<<<<<< HEAD
-    const numberOfItems = images[randomNumber].number_of_items
-=======
-    const numberOfItems = images[randomNumber].number_of_items
->>>>>>> a5131292dd43ace9b39f067ce2274de227193096
+    const numberOfItems = images[randomNumber].number_of_items //correct number of items
 
     const number0to1 = Math.floor(Math.random() * 2)
     const plusOrMinus = number0to1 === 0? -1 : +1

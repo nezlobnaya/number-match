@@ -86,11 +86,16 @@ const images = [
 
   document.getElementById('timeSetting').innerHTML = timeDelay /1000
   document.getElementById('game-area').style.display = 'none'
+  const totalAvailableRef = document.getElementById('totalAvailable').innerHTML = images.length
+  document.getElementById('currentScore').innerHTML = score
 
 generateImage = (randomNumber) => {
     const imageFileName = images[randomNumber].image_name 
     const image = document.querySelector('img')
     image.src = `images/${imageFileName}`
+
+    const imageName = imageFileName.slice(0, imageFileName.length - 4)
+    document.getElementById('item-name').innerHTML = imageName
 
     const numberOfItems = images[randomNumber].number_of_items
 
@@ -113,6 +118,7 @@ generateImage = (randomNumber) => {
 }
 
 loop = () => {
+    document.getElementById('message').innerHTML = ''
     if(images.length === 0) {
         endOfGame()
         stopTimer()
@@ -157,4 +163,5 @@ noMatch = () => {
 
 endOfGame = () => {
     document.getElementById('game-area').style.display = 'none'
+    document.getElementById('message').innerHTML = `Game over, your score was ${score} /${totalAvailableRef}`
 }

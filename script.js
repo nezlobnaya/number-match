@@ -85,6 +85,7 @@ const images = [
   let currentImageValue = 0, displayNumber = 0, score = 0, chosen = false
 
   document.getElementById('timeSetting').innerHTML = timeDelay /1000
+  document.getElementById('game-area').style.display = 'none'
 
 generateImage = (randomNumber) => {
     const imageFileName = images[randomNumber].image_name 
@@ -113,6 +114,7 @@ generateImage = (randomNumber) => {
 
 loop = () => {
     if(images.length === 0) {
+        endOfGame()
         stopTimer()
         return
     }
@@ -126,6 +128,9 @@ setInterval(loop, timeDelay)
 }
 
 play = () => {
+   document.getElementById('game-area').style.display = 'block'
+   document.getElementById('welcome').style.display = 'none'
+   document.getElementById('play-button').style.display = 'none'
    loop()
    timer() 
 }
@@ -148,4 +153,8 @@ noMatch = () => {
         document.getElementById('currentScore').innerHTML = score
         chosen = true
     }
+}
+
+endOfGame = () => {
+    document.getElementById('game-area').style.display = 'none'
 }

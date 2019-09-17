@@ -164,4 +164,5 @@ noMatch = () => {
 endOfGame = () => {
     document.getElementById('game-area').style.display = 'none'
     document.getElementById('message').innerHTML = `Game over, your score was ${score} /${totalAvailableRef}`
+    setTimeout(() => location.reload(), 3000)
 }

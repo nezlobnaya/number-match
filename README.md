@@ -22,3 +22,5 @@ Javascript Math functions
 The ternary operator
 If statements and the return keyword
 setInterval, clearInterval and setTimeout
+
+Deployed: ```https://number-match.netlify.com/```

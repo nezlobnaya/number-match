@@ -43,3 +43,10 @@ button {
     background-color: rgb(58, 148, 82); /* Green */
     color: #20903a;
 }
+
+@media only screen and (max-width:500px){
+    img {
+        max-width: 100%;
+    }
+
+}
